@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OrbitAI - Persona Search</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #D1D0D0;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+    color: #988686;
+  }
+
+  p.description {
+    margin-bottom: 30px;
+    color: #aaa;
+  }
+
+  form {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+
+  input[type="text"], select {
+    padding: 10px;
+    margin: 5px;
+    width: 220px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: #5C4E4E;
+    color: #D1D0D0;
+  }
+
+  input[type="submit"], .download-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #988686;
+    color: #000;
+    font-weight: bold;
+  }
+
+  input[type="submit"]:hover, .download-btn:hover {
+    background-color: #5C4E4E;
+    color: #D1D0D0;
+  }
+
+  .results {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+
+  .card h3 {
+    margin: 0 0 10px 0;
+    color: #988686;
+  }
+
+  .compatibility {
+    font-weight: bold;
+    color: #e0a899;
+  }
+
+  .insight {
+    font-style: italic;
+    color: #bbb;
+    margin-top: 5px;
+  }
+
+  .msg {
+    max-width: 900px;
+    margin: 0 auto 16px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+
+  .msg.info {
+    background: #2a3b4d;
+    color: #d1d0d0;
+  }
+
+  .msg.error {
+    background: #5C2E2E;
+    color: #f5c2c2;
+  }
+
+  .download-btn {
+  background-color: #988686;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;  
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: inline-block; 
+}
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1>OrbitAI - Natural Language Persona Search</h1>
+    <p class="description">
+      Search among user personas using natural language and filters. Download sample personas below.
+    </p>
+
+    <div style="margin-bottom: 20px;">
+      <a href="{% static 'orbitai.json' %}" class="download-btn" download>Download orbitai.json</a>
+    </div>
+
+    {% if error %}
+      <div class="msg error">{{ error }}</div>
+    {% endif %}
+    {% if info %}
+      <div class="msg info">{{ info }}</div>
+    {% endif %}
+
+    <form method="get">
+      <input type="text"
+             name="q"
+             placeholder="Type your query..."
+             value="{{ query|default_if_none:'' }}">
+      <select name="smoker">
+        <option value="">Smoker?</option>
+        <option value="true"  {% if smoker == 'true' %}selected{% endif %}>Yes</option>
+        <option value="false" {% if smoker == 'false' %}selected{% endif %}>No</option>
+      </select>
+      <input type="submit" value="Search">
+    </form>
+
+    <div class="results">
+      {% if results %}
+        <h2>Top 5 Search Results</h2>
+        {% for r in results|slice:":5" %}
+          <div class="card">
+            <h3>{{ r.name }} ({{ r.job_role }})</h3>
+            <p><strong>Bio:</strong> {{ r.bio }}</p>
+            {% if r.location %}
+              <p><strong>Location:</strong> {{ r.location }}</p>
+            {% endif %}
+            <p><strong>Smoker:</strong> {{ r.smoker|yesno:"Yes,No,Unknown" }}</p>
+            {% if r.hobbies %}
+              <p><strong>Hobbies:</strong> {{ r.hobbies|join:", " }}</p>
+            {% endif %}
+            <p class="compatibility">Compatibility: {{ r.compatibility }}</p>
+            {% if r.insight %}
+              <p class="insight">{{ r.insight }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <p style="text-align:center;">No results found.</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OrbitAI - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #D1D0D0;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #988686;
+        }
+
+        p.intro {
+            margin-bottom: 30px;
+            color: #aaa;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .card h2 {
+            color: #e0a899;
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #bbb;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .card a {
+            display: inline-block;
+            background-color: #988686;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .card a:hover {
+            background-color: #5C4E4E;
+            color: #D1D0D0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Welcome to OrbitAI</h1>
+    <p class="intro">Explore AI-powered tools designed to make your ideas more interactive and intelligent.</p>
+
+    <div class="projects">
+        <div class="card">
+            <h2>Audiobook</h2>
+            <p>Transform any PDF into an immersive audiobook with natural AI narration — perfect for learning or on-the-go listening.</p>
+            <a href="{% url 'pdf_to_audio' %}">Try Audiobook</a>
+        </div>
+        <div class="card">
+            <h2>VectorSearch</h2>
+            <p>Search and filter user personas using natural language queries, powered by vector embeddings and semantic understanding.</p>
+            <a href="{% url 'search_personas' %}">Try VectorSearch</a>
+        </div>
+        <div class="card">
+            <h2>Storybook</h2>
+            <p>Write your own story and generate AI-powered illustrations to bring your words to life — create your personal visual storybook.</p>
+            <a href="{% url 'storybook:create_storybook' %}">Try Storybook</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+{% extends "storybook/base.html" %}
+
+{% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #D1D0D0;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    color: #988686;
+  }
+
+  form {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #aaa;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  textarea,
+  input[type="file"] {
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: #5C4E4E;
+    color: #D1D0D0;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #988686;
+    color: #000;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: #5C4E4E;
+    color: #D1D0D0;
+  }
+
+  #result {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #result a {
+    color: #e0a899;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+</style>
+
+<div class="container">
+  <h2>Create a Storybook</h2>
+
+  <form id="createStoryForm" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Storybook Title</label>
+    <input type="text" name="title" required>
+
+    <label>Description (optional)</label>
+    <textarea name="description" rows="3"></textarea>
+
+    <label>Text Input</label>
+    <textarea name="text" rows="6"></textarea>
+
+    <label>Or Upload PDF</label>
+    <input type="file" name="pdf" accept="application/pdf">
+
+    <button id="createBtn" type="submit">Create Storybook</button>
+  </form>
+
+  <div id="result"
+       data-preview-url-template="{% url 'storybook:preview_storybook' storybook_id='00000000-0000-0000-0000-000000000000' %}">
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('createStoryForm');
+  const btn  = document.getElementById('createBtn');
+  const res  = document.getElementById('result');
+
+  if (!form || !btn || !res) {
+    console.error('Create form elements not found.');
+    return;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    btn.disabled = true;
+    const original = btn.textContent;
+    btn.textContent = 'Creating...';
+
+    try {
+      const fd = new FormData(form);
+      const endpoint = "{% url 'storybook:create_storybook' %}";
+
+      const r = await fetch(endpoint, {
+        method: "POST",
+        body: fd
+      });
+
+      if (!r.ok) {
+        const t = await r.text();
+        throw new Error(`HTTP ${r.status}: ${t.slice(0, 300)}`);
+      }
+
+      const j = await r.json();
+      if (j.status === "success" && j.storybook_id) {
+        const tmpl = res.dataset.previewUrlTemplate;
+        const url  = tmpl.replace('00000000-0000-0000-0000-000000000000', j.storybook_id);
+        res.innerHTML = `Storybook created! <a href="${url}">Preview it here</a>`;
+      } else {
+        res.textContent = `Error: ${j.message || 'Unknown error'}`;
+      }
+    } catch (err) {
+      console.error(err);
+      res.textContent = `Network/Server error: ${err.message || err}`;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = original;
+    }
+  });
+});
+</script>
+
+{% endblock %}

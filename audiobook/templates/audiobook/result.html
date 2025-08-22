@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audiobook Result</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #D1D0D0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        h2 {
+            color: #988686;
+        }
+        audio {
+            margin-top: 20px;
+            width: 80%;
+        }
+        a.download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #5C4E4E;
+            color: #D1D0D0;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        a.download-btn:hover {
+            background-color: #988686;
+            color: #000000;
+        }
+        #message {
+            margin-top: 20px;
+            display: none;
+            color: #988686;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Conversion Complete ✅</h2>
+
+    <audio controls>
+        <source src="{{ audio_url }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <br><br>
+    <a href="{{ audio_url }}" 
+       download="{{ filename }}" 
+       class="download-btn" 
+       onclick="showMessage()">Download Audio</a>
+
+    <p id="message">🎧 Audio Downloaded Successfully!</p>
+
+    <script>
+        function showMessage() {
+            let msg = document.getElementById("message");
+            msg.style.display = "block";
+            setTimeout(() => {
+                msg.style.display = "none";
+            }, 3000); // hide after 3 sec
+        }
+    </script>
+</body>
+</html>

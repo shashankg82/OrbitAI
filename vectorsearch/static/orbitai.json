@@ -1,0 +1,752 @@
+[
+  {
+    "name": "Rahul Sharma",
+    "gender": "Male",
+    "age": 29,
+    "bio": "Rahul is a backend engineer with over 6 years of experience in building scalable microservices. He enjoys solving complex system problems and mentoring junior developers.",
+    "job_role": "Backend Engineer",
+    "hobbies": [
+      "cricket",
+      "reading tech blogs",
+      "trekking"
+    ],
+    "smoker": false,
+    "location": "Bengaluru",
+    "embedding": null
+  },
+  {
+    "name": "Priya Iyer",
+    "gender": "Female",
+    "age": 32,
+    "bio": "Priya is a frontend engineer passionate about creating intuitive user interfaces. She has worked on several e-commerce platforms and values clean design.",
+    "job_role": "Frontend Engineer",
+    "hobbies": [
+      "painting",
+      "yoga",
+      "gardening"
+    ],
+    "smoker": false,
+    "location": "Chennai",
+    "embedding": null
+  },
+  {
+    "name": "Ankit Verma",
+    "gender": "Male",
+    "age": 35,
+    "bio": "Ankit is a seasoned fullstack developer who thrives in dynamic environments. He enjoys architecting solutions that seamlessly integrate backend and frontend systems.",
+    "job_role": "Fullstack Developer",
+    "hobbies": [
+      "badminton",
+      "traveling",
+      "photography"
+    ],
+    "smoker": true,
+    "location": "Delhi",
+    "embedding": null
+  },
+  {
+    "name": "Neha Kapoor",
+    "gender": "Female",
+    "age": 28,
+    "bio": "Neha is a data engineer with expertise in ETL pipelines and big data platforms. She loves turning raw data into valuable insights for decision-making.",
+    "job_role": "Data Engineer",
+    "hobbies": [
+      "classical dance",
+      "cooking",
+      "cycling"
+    ],
+    "smoker": false,
+    "location": "Pune",
+    "embedding": null
+  },
+  {
+    "name": "Sandeep Reddy",
+    "gender": "Male",
+    "age": 31,
+    "bio": "Sandeep works as a DevOps engineer, ensuring smooth CI/CD pipelines and infrastructure automation. He enjoys collaborating with teams to improve release cycles.",
+    "job_role": "DevOps Engineer",
+    "hobbies": [
+      "gym workout",
+      "motorbiking",
+      "chess"
+    ],
+    "smoker": false,
+    "location": "Hyderabad",
+    "embedding": null
+  },
+  {
+    "name": "Meera Joshi",
+    "gender": "Female",
+    "age": 34,
+    "bio": "Meera is a QA engineer who takes pride in ensuring product reliability and quality. She is detail-oriented and enjoys exploring new testing tools.",
+    "job_role": "QA Engineer",
+    "hobbies": [
+      "knitting",
+      "watching movies",
+      "gardening"
+    ],
+    "smoker": false,
+    "location": "Ahmedabad",
+    "embedding": null
+  },
+  {
+    "name": "Vikram Singh",
+    "gender": "Male",
+    "age": 40,
+    "bio": "Vikram is a senior machine learning engineer focusing on predictive analytics and NLP. He has contributed to multiple AI-driven platforms in healthcare and finance.",
+    "job_role": "Machine Learning Engineer",
+    "hobbies": [
+      "reading research papers",
+      "long walks",
+      "photography"
+    ],
+    "smoker": true,
+    "location": "Gurgaon",
+    "embedding": null
+  },
+  {
+    "name": "Ritika Patel",
+    "gender": "Female",
+    "age": 27,
+    "bio": "Ritika is a mobile app developer specializing in Android applications. She loves experimenting with new mobile technologies and delivering smooth user experiences.",
+    "job_role": "Mobile App Developer",
+    "hobbies": [
+      "singing",
+      "painting",
+      "cycling"
+    ],
+    "smoker": false,
+    "location": "Surat",
+    "embedding": null
+  },
+  {
+    "name": "Karan Mehta",
+    "gender": "Male",
+    "age": 33,
+    "bio": "Karan is an AI researcher passionate about computer vision and reinforcement learning. He actively publishes papers and collaborates with academic institutions.",
+    "job_role": "AI Researcher",
+    "hobbies": [
+      "playing guitar",
+      "swimming",
+      "reading sci-fi"
+    ],
+    "smoker": false,
+    "location": "Mumbai",
+    "embedding": null
+  },
+  {
+    "name": "Swati Deshmukh",
+    "gender": "Female",
+    "age": 36,
+    "bio": "Swati is a backend engineer with strong expertise in Java and cloud systems. She enjoys solving scaling challenges for high-traffic applications.",
+    "job_role": "Backend Engineer",
+    "hobbies": [
+      "cooking",
+      "yoga",
+      "traveling"
+    ],
+    "smoker": false,
+    "location": "Nagpur",
+    "embedding": null
+  },
+  {
+    "name": "Mitali Thakur",
+    "gender": "Male",
+    "age": 44,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Backend Engineer",
+    "hobbies": [
+      "music",
+      "cycling",
+      "gardening"
+    ],
+    "smoker": true,
+    "location": "Indore",
+    "embedding": null
+  },
+  {
+    "name": "Sunita Banerjee",
+    "gender": "Male",
+    "age": 31,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "QA Engineer",
+    "hobbies": [
+      "traveling",
+      "reading",
+      "cricket"
+    ],
+    "smoker": true,
+    "location": "Coimbatore",
+    "embedding": null
+  },
+  {
+    "name": "Harish Malhotra",
+    "gender": "Male",
+    "age": 30,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Machine Learning Engineer",
+    "hobbies": [
+      "cricket",
+      "gardening",
+      "yoga"
+    ],
+    "smoker": false,
+    "location": "Bhopal",
+    "embedding": null
+  },
+  {
+    "name": "Kapil Bose",
+    "gender": "Male",
+    "age": 27,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "DevOps Engineer",
+    "hobbies": [
+      "painting",
+      "cricket",
+      "cycling"
+    ],
+    "smoker": true,
+    "location": "Coimbatore",
+    "embedding": null
+  },
+  {
+    "name": "Gaurav Pandey",
+    "gender": "Male",
+    "age": 35,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Data Engineer",
+    "hobbies": [
+      "cricket",
+      "painting",
+      "music"
+    ],
+    "smoker": false,
+    "location": "Coimbatore",
+    "embedding": null
+  },
+  {
+    "name": "Santosh Ghosh",
+    "gender": "Male",
+    "age": 34,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Machine Learning Engineer",
+    "hobbies": [
+      "chess",
+      "gardening",
+      "yoga"
+    ],
+    "smoker": false,
+    "location": "Mysore",
+    "embedding": null
+  },
+  {
+    "name": "Lakshmi Mishra",
+    "gender": "Female",
+    "age": 43,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Machine Learning Engineer",
+    "hobbies": [
+      "music",
+      "traveling",
+      "yoga"
+    ],
+    "smoker": false,
+    "location": "Mysore",
+    "embedding": null
+  },
+  {
+    "name": "Lakshmi Chauhan",
+    "gender": "Male",
+    "age": 43,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Data Engineer",
+    "hobbies": [
+      "music",
+      "chess",
+      "cycling"
+    ],
+    "smoker": false,
+    "location": "Mysore",
+    "embedding": null
+  },
+  {
+    "name": "Pooja Mishra",
+    "gender": "Male",
+    "age": 33,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Frontend Engineer",
+    "hobbies": [
+      "traveling",
+      "reading",
+      "cycling"
+    ],
+    "smoker": true,
+    "location": "Patna",
+    "embedding": null
+  },
+  {
+    "name": "Naveen Pathak",
+    "gender": "Female",
+    "age": 31,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "DevOps Engineer",
+    "hobbies": [
+      "music",
+      "painting",
+      "reading"
+    ],
+    "smoker": true,
+    "location": "Indore",
+    "embedding": null
+  },
+  {
+    "name": "Nitin Das",
+    "gender": "Male",
+    "age": 28,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "AI Researcher",
+    "hobbies": [
+      "gardening",
+      "yoga",
+      "cricket"
+    ],
+    "smoker": true,
+    "location": "Noida",
+    "embedding": null
+  },
+  {
+    "name": "Arjun Thakur",
+    "gender": "Female",
+    "age": 34,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Data Engineer",
+    "hobbies": [
+      "reading",
+      "cricket",
+      "gardening"
+    ],
+    "smoker": false,
+    "location": "Mysore",
+    "embedding": null
+  },
+  {
+    "name": "Seema Banerjee",
+    "gender": "Male",
+    "age": 42,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Backend Engineer",
+    "hobbies": [
+      "cycling",
+      "traveling",
+      "painting"
+    ],
+    "smoker": false,
+    "location": "Kolkata",
+    "embedding": null
+  },
+  {
+    "name": "Rekha Bhattacharya",
+    "gender": "Female",
+    "age": 32,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "DevOps Engineer",
+    "hobbies": [
+      "reading",
+      "chess",
+      "painting"
+    ],
+    "smoker": true,
+    "location": "Noida",
+    "embedding": null
+  },
+  {
+    "name": "Ishita Tripathi",
+    "gender": "Male",
+    "age": 28,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "QA Engineer",
+    "hobbies": [
+      "yoga",
+      "cycling",
+      "painting"
+    ],
+    "smoker": false,
+    "location": "Kolkata",
+    "embedding": null
+  },
+  {
+    "name": "Ravi Pandey",
+    "gender": "Female",
+    "age": 44,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Frontend Engineer",
+    "hobbies": [
+      "music",
+      "painting",
+      "traveling"
+    ],
+    "smoker": false,
+    "location": "Thiruvananthapuram",
+    "embedding": null
+  },
+  {
+    "name": "Mitali Ghosh",
+    "gender": "Female",
+    "age": 36,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Fullstack Developer",
+    "hobbies": [
+      "cycling",
+      "gardening",
+      "chess"
+    ],
+    "smoker": true,
+    "location": "Indore",
+    "embedding": null
+  },
+  {
+    "name": "Ravi Kulkarni",
+    "gender": "Male",
+    "age": 31,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Mobile App Developer",
+    "hobbies": [
+      "traveling",
+      "cricket",
+      "chess"
+    ],
+    "smoker": false,
+    "location": "Noida",
+    "embedding": null
+  },
+  {
+    "name": "Naveen Agarwal",
+    "gender": "Female",
+    "age": 33,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Backend Engineer",
+    "hobbies": [
+      "gardening",
+      "cycling",
+      "painting"
+    ],
+    "smoker": false,
+    "location": "Coimbatore",
+    "embedding": null
+  },
+  {
+    "name": "Ishita Chauhan",
+    "gender": "Male",
+    "age": 41,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "AI Researcher",
+    "hobbies": [
+      "gardening",
+      "cycling",
+      "traveling"
+    ],
+    "smoker": false,
+    "location": "Thiruvananthapuram",
+    "embedding": null
+  },
+  {
+    "name": "Deepa Bhattacharya",
+    "gender": "Male",
+    "age": 39,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Fullstack Developer",
+    "hobbies": [
+      "cycling",
+      "reading",
+      "cricket"
+    ],
+    "smoker": false,
+    "location": "Kolkata",
+    "embedding": null
+  },
+  {
+    "name": "Ishita Kulkarni",
+    "gender": "Male",
+    "age": 27,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Fullstack Developer",
+    "hobbies": [
+      "painting",
+      "reading",
+      "chess"
+    ],
+    "smoker": false,
+    "location": "Indore",
+    "embedding": null
+  },
+  {
+    "name": "Rohan Kulkarni",
+    "gender": "Female",
+    "age": 41,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "AI Researcher",
+    "hobbies": [
+      "music",
+      "yoga",
+      "painting"
+    ],
+    "smoker": true,
+    "location": "Jaipur",
+    "embedding": null
+  },
+  {
+    "name": "Gaurav Mishra",
+    "gender": "Female",
+    "age": 35,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Mobile App Developer",
+    "hobbies": [
+      "gardening",
+      "yoga",
+      "cycling"
+    ],
+    "smoker": true,
+    "location": "Mysore",
+    "embedding": null
+  },
+  {
+    "name": "Sunita Nair",
+    "gender": "Female",
+    "age": 43,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Frontend Engineer",
+    "hobbies": [
+      "traveling",
+      "yoga",
+      "cricket"
+    ],
+    "smoker": true,
+    "location": "Indore",
+    "embedding": null
+  },
+  {
+    "name": "Amit Banerjee",
+    "gender": "Female",
+    "age": 38,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "DevOps Engineer",
+    "hobbies": [
+      "cycling",
+      "music",
+      "reading"
+    ],
+    "smoker": true,
+    "location": "Bhopal",
+    "embedding": null
+  },
+  {
+    "name": "Prakash Gupta",
+    "gender": "Male",
+    "age": 26,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Backend Engineer",
+    "hobbies": [
+      "gardening",
+      "chess",
+      "yoga"
+    ],
+    "smoker": true,
+    "location": "Bhopal",
+    "embedding": null
+  },
+  {
+    "name": "Kavita Chatterjee",
+    "gender": "Female",
+    "age": 41,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Frontend Engineer",
+    "hobbies": [
+      "cycling",
+      "traveling",
+      "gardening"
+    ],
+    "smoker": true,
+    "location": "Jaipur",
+    "embedding": null
+  },
+  {
+    "name": "Divya Ghosh",
+    "gender": "Male",
+    "age": 42,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Machine Learning Engineer",
+    "hobbies": [
+      "painting",
+      "cycling",
+      "reading"
+    ],
+    "smoker": false,
+    "location": "Patna",
+    "embedding": null
+  },
+  {
+    "name": "Ramesh Rao",
+    "gender": "Female",
+    "age": 38,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Frontend Engineer",
+    "hobbies": [
+      "cycling",
+      "cricket",
+      "gardening"
+    ],
+    "smoker": false,
+    "location": "Noida",
+    "embedding": null
+  },
+  {
+    "name": "Smita Pandey",
+    "gender": "Male",
+    "age": 38,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Fullstack Developer",
+    "hobbies": [
+      "chess",
+      "cricket",
+      "painting"
+    ],
+    "smoker": false,
+    "location": "Noida",
+    "embedding": null
+  },
+  {
+    "name": "Mitali Das",
+    "gender": "Female",
+    "age": 36,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "QA Engineer",
+    "hobbies": [
+      "traveling",
+      "reading",
+      "painting"
+    ],
+    "smoker": true,
+    "location": "Jaipur",
+    "embedding": null
+  },
+  {
+    "name": "Ashok Malhotra",
+    "gender": "Female",
+    "age": 27,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Fullstack Developer",
+    "hobbies": [
+      "yoga",
+      "chess",
+      "cricket"
+    ],
+    "smoker": true,
+    "location": "Kolkata",
+    "embedding": null
+  },
+  {
+    "name": "Lakshmi Ghosh",
+    "gender": "Female",
+    "age": 40,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Backend Engineer",
+    "hobbies": [
+      "gardening",
+      "cricket",
+      "painting"
+    ],
+    "smoker": true,
+    "location": "Thiruvananthapuram",
+    "embedding": null
+  },
+  {
+    "name": "Mitali Nair",
+    "gender": "Male",
+    "age": 31,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Data Engineer",
+    "hobbies": [
+      "yoga",
+      "cycling",
+      "gardening"
+    ],
+    "smoker": false,
+    "location": "Coimbatore",
+    "embedding": null
+  },
+  {
+    "name": "Divya Bose",
+    "gender": "Male",
+    "age": 35,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "DevOps Engineer",
+    "hobbies": [
+      "chess",
+      "cycling",
+      "music"
+    ],
+    "smoker": false,
+    "location": "Lucknow",
+    "embedding": null
+  },
+  {
+    "name": "Simran Das",
+    "gender": "Male",
+    "age": 31,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Machine Learning Engineer",
+    "hobbies": [
+      "painting",
+      "traveling",
+      "music"
+    ],
+    "smoker": false,
+    "location": "Kolkata",
+    "embedding": null
+  },
+  {
+    "name": "Ashok Pathak",
+    "gender": "Male",
+    "age": 28,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Backend Engineer",
+    "hobbies": [
+      "cycling",
+      "yoga",
+      "gardening"
+    ],
+    "smoker": false,
+    "location": "Noida",
+    "embedding": null
+  },
+  {
+    "name": "Rekha Rao",
+    "gender": "Female",
+    "age": 31,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Frontend Engineer",
+    "hobbies": [
+      "cricket",
+      "gardening",
+      "chess"
+    ],
+    "smoker": false,
+    "location": "Patna",
+    "embedding": null
+  },
+  {
+    "name": "Naveen Agarwal",
+    "gender": "Male",
+    "age": 43,
+    "bio": "An experienced professional in the software industry, passionate about continuous learning and contributing to impactful projects. Known for teamwork and problem-solving skills.",
+    "job_role": "Fullstack Developer",
+    "hobbies": [
+      "chess",
+      "gardening",
+      "cricket"
+    ],
+    "smoker": false,
+    "location": "Bhopal",
+    "embedding": null
+  }
+]

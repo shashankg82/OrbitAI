@@ -1,0 +1,222 @@
+{% extends "storybook/base.html" %}
+
+{% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #D1D0D0;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-bottom: 5px;
+    color: #988686;
+  }
+
+  h2 {
+    margin: 10px 0 30px;
+    font-size: 20px;
+    color: #D1D0D0;
+    text-transform: uppercase;
+  }
+
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+  }
+
+  .control {
+    text-align: left;
+  }
+
+  .control label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #aaa;
+  }
+
+  select, input[type="number"] {
+    padding: 10px;
+    width: 200px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: #5C4E4E;
+    color: #D1D0D0;
+    text-align: center;
+  }
+
+
+  #pages {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .page {
+    background-color: #1a1a1a;
+    padding: 20px;
+    margin: 0 auto 20px auto;
+    border-radius: 8px;
+    max-width: 600px;
+  }
+
+  .text-page p {
+    margin: 0;
+    color: #D1D0D0;
+    text-align: justify;
+    line-height: 1.6;
+  }
+
+  .image-page img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(255,255,255,0.1);
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image-page p {
+    text-align: center;
+    color: #bbb;
+  }
+
+  
+  #downloadPdfBtn {
+    padding: 12px 24px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #988686;
+    color: #000;
+    font-weight: bold;
+  }
+
+  #downloadPdfBtn:hover {
+    background-color: #5C4E4E;
+    color: #D1D0D0;
+  }
+</style>
+
+<div class="container">
+  <h1>OrbitAI Storybook</h1>
+  <h2>{{ storybook.title }}</h2>
+
+  
+  <div class="controls">
+    <div class="control">
+      <label for="fontFamily">Font Family</label>
+      <select id="fontFamily">
+        {% with ff=storybook.settings.font_family|default:"Helvetica" %}
+          <option value="Helvetica" {% if ff == "Helvetica" %}selected{% endif %}>Helvetica</option>
+          <option value="Times-Roman" {% if ff == "Times-Roman" %}selected{% endif %}>Times-Roman</option>
+          <option value="Courier" {% if ff == "Courier" %}selected{% endif %}>Courier</option>
+        {% endwith %}
+      </select>
+    </div>
+
+    <div class="control">
+      <label for="fontSize">Font Size (px)</label>
+      <input type="number" id="fontSize" value="{{ storybook.settings.font_size|default:12 }}" min="8" max="72">
+    </div>
+  </div>
+
+  
+  <div id="pages">
+    {% for page in pages %}
+      {% if page.kind == "TEXT" %}
+        <div class="page text-page" data-index="{{ page.index }}">
+          <p>{{ page.text_content|linebreaks }}</p>
+        </div>
+      {% elif page.kind == "IMAGE" %}
+        <div class="page image-page" data-index="{{ page.index }}">
+          {% if page.image_file %}
+            <img src="{{ page.image_file.url }}?v={{ page.updated_at|date:'U' }}" alt="Image Page {{ page.index }}">
+          {% else %}
+            {% if page.gen_status == "ERROR" and page.gen_error %}
+              <p style="color:#f5c2c2;">Image failed: {{ page.gen_error }}</p>
+            {% elif page.gen_status == "RUNNING" %}
+              <p>Generating…</p>
+            {% else %}
+              <p>Image pending…</p>
+            {% endif %}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <button id="downloadPdfBtn">Download PDF</button>
+</div>
+
+
+<script>
+function getCookie(name) {
+  const v = `; ${document.cookie}`.split(`; ${name}=`); 
+  if (v.length === 2) return v.pop().split(';').shift();
+}
+const CSRF = getCookie('csrftoken') || '{{ csrf_token }}';
+
+const fontFamilySelect = document.getElementById('fontFamily');
+const fontSizeInput    = document.getElementById('fontSize');
+const textPages        = document.querySelectorAll('.text-page p');
+
+function updateTextStyles() {
+  const size = parseInt(fontSizeInput.value, 10);
+  const safeSize = Number.isFinite(size) ? size : 12;
+  textPages.forEach(p => {
+    p.style.fontFamily = fontFamilySelect.value || "Helvetica";
+    p.style.fontSize = safeSize + 'px';
+  });
+}
+fontFamilySelect.addEventListener('change', updateTextStyles);
+fontSizeInput.addEventListener('input', updateTextStyles);
+updateTextStyles();
+
+// Auto-refresh if images are pending
+(function autoRefreshIfPending() {
+  const anyPending = [...document.querySelectorAll('.image-page')].some(el => {
+    const hasImg = el.querySelector('img');
+    const msg = el.textContent.toLowerCase();
+    return !hasImg && (msg.includes('pending') || msg.includes('generating'));
+  });
+  if (anyPending) {
+    setTimeout(() => { window.location.reload(); }, 8000);
+  }
+})();
+
+// Download PDF
+document.getElementById('downloadPdfBtn').addEventListener('click', async () => {
+  const font_family = fontFamilySelect.value || "Helvetica";
+  const sizeNum = parseInt(fontSizeInput.value, 10);
+  const font_size  = Number.isFinite(sizeNum) ? sizeNum : 12;
+
+  try {
+    const r = await fetch("{% url 'storybook:download_pdf' storybook_id=storybook.id %}", {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json', 'X-CSRFToken': CSRF },
+      body: JSON.stringify({ font_family, font_size })
+    });
+    const j = await r.json();
+    if (j.status === "success") window.open(j.pdf_url, '_blank');
+    else alert(j.message || "PDF generation failed!");
+  } catch (err) {
+    alert("Error generating PDF: " + err);
+  }
+});
+</script>
+{% endblock %}
