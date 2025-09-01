@@ -6,7 +6,7 @@ from pathlib import Path
 import requests
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-HF_TOKEN = "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"  # set via environment
+HF_TOKEN = "set your hugging face token"
 HEADERS = {"Authorization": f"Bearer {HF_TOKEN}"} if HF_TOKEN else {}
 
 class ImageGenError(Exception):
