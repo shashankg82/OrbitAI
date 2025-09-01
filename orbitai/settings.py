@@ -134,5 +134,5 @@ STORYBOOK_DEFAULTS = {
     "font_size": 12,            # default font size
 }
 
-PINECONE_API_KEY = "pcsk_6GKvvf_8msQ7VVKotsEyTBomuBfYDPG7H8iy3mLGapwyXDxHqcb4RvLeqM9E8bZ7KvSvmr"
+PINECONE_API_KEY = "Enter Your Pinecone api key"
 PINECONE_ENV= "us-east-1"
